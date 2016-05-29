@@ -1,4 +1,5 @@
 # PostgreSQL-to-Redshift-Data-Loader
+    Ground to cloud data integration tool
     Used for ad-hoc query data results load from PostgreSQL to Amazon-Redshift.
     Works from Windows CLI (command line).
 

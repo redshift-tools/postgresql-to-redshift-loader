@@ -96,18 +96,11 @@ PGRES_CLIENT_HOME = os.getenv('PGRES_CLIENT_HOME')
 assert PGRES_CLIENT_HOME, 'PGRES_CLIENT_HOME is not set'
 import imp
 
-#NLS_DATE_FORMAT = os.getenv('NLS_DATE_FORMAT').strip().strip('"').strip("'")
-#assert NLS_DATE_FORMAT, 'NLS_DATE_FORMAT is not set'
-#NLS_TIMESTAMP_FORMAT = os.getenv('NLS_TIMESTAMP_FORMAT').strip().strip('"').strip("'")
-#assert NLS_TIMESTAMP_FORMAT, 'NLS_TIMESTAMP_FORMAT is not set'
-#NLS_TIMESTAMP_TZ_FORMAT = os.getenv('NLS_TIMESTAMP_TZ_FORMAT') .strip().strip('"').strip("'")
-#assert NLS_TIMESTAMP_TZ_FORMAT, 'NLS_TIMESTAMP_TZ_FORMAT is not set'
-
 REDSHIFT_CONNECT_STRING= os.getenv('REDSHIFT_CONNECT_STRING') 
 assert REDSHIFT_CONNECT_STRING, 'REDSHIFT_CONNECT_STRING is not set'
 
 bucket=None	
-#bucket_name= 'pythonuploadtest1' 
+ 
 s3_key_name=None
 use_rr=False,
 make_public=True
@@ -218,8 +211,7 @@ def sendStreamGz(bucket, s3_key, pipe, suffix='.gz'):
 			upload_to_s3(c)
 	else:
 		upload_to_s3(None)
-	#print('Compressed size: %s' %compressor.fileobj.tell())
-	#print(dir(compressor))
+
 	
 	return key
 	
@@ -231,14 +223,6 @@ def RepresentsInt(s):
         return True
     except ValueError:
         return False 
-"""
-set PGPASSWORD= 
-set PGCLIENTENCODING=UTF8
-
-set REDSHIFT_CONNECT_STRING="dbname='loadtest' port='5439' user='loadtest' password='Loadtest123' host='loadtest.cxvkqzwtuva2.us-west-2.redshift.amazonaws.com'"  
-psql -U loadtest -h loadtest.cxvkqzwtuva2.us-west-2.redshift.amazonaws.com  -d loadtest -p 5439
-"""
-
 	
 if __name__ == "__main__":		
 	parser = OptionParser()
@@ -312,21 +296,14 @@ if __name__ == "__main__":
 		extractor_file = os.path.join(abspath,'include','extractor.py')		
 		extractor=import_module(extractor_file)
 		p=extractor.extract(os.environ)
-		#print cur.fetchall()
-		#print cur.fetchone()
-		#cur.close()
-		#print 1, pipe.getvalue()
-		#e(0)
+
 		
 	bucket = conn.get_bucket(opt.s3_bucket_name)
 	sys.stdout.write('Started reading from PostgreSQL (%s sec).\n' % round((time.time() - start_time),2))
 
 	pipe=p.stdout
 	s3key=sendStreamGz(bucket, opt.s3_key_name, pipe, suffix='.gz')
-	#p1.wait()
-	#p.wait()
-	#sys.stdout.write('Done reading from Oracle (%s sec).\n' % round((time.time() - start_time),2))
-	#e(0)
+
 	if opt.s3_public:
 		k = Key(bucket)
 		k.key = s3key

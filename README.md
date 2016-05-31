@@ -51,7 +51,7 @@ Pre-Prod (UAT/QA/DEV)
 ##Usage
 
 ```
-c:\Python35-32\PROJECTS\Ora2redshift>dist\PostgreSQL_to_Redshift_loader.exe
+c:\Python35-32\PROJECTS\PostgreSQL2redshift>dist\PostgreSQL_to_Redshift_loader.exe
 #############################################################################
 #PostgreSQL-to-Redshift Data Loader (v1.2, beta, 04/05/2016 15:11:53) [64bit]
 #Copyright (c): 2016 Alex Buzunov, All rights reserved.
@@ -146,7 +146,7 @@ dist-64bit\PostgreSQL_to_redshift_loader.exe ^
 Executing `test.bat`:
 
 ```
-c:\Python35-32\PROJECTS\Ora2redshift>dist-64bit\PostgreSQL_to_redshift_loader.exe -q table_query.sql -d "," -b test_bucket -k postgresql_table_export -r -o crime_test -m "DD/MM/YYYY HH12:MI:SS" -s
+c:\Python35-32\PROJECTS\PostgreSQL2redshift>dist-64bit\PostgreSQL_to_redshift_loader.exe -q table_query.sql -d "," -b test_bucket -k postgresql_table_export -r -o crime_test -m "DD/MM/YYYY HH12:MI:SS" -s
 Uploading results of "table_query.sql" to existing bucket "test_bucket"
 Started reading from PostgreSQL (1.25 sec).
 Dumping data to: c:\Python35-32\PROJECTS\Ora2redshift\data_dump\table_query\test_bucket\postgresql_table_export.20160408_203221.gz
@@ -204,7 +204,7 @@ COPY %s FROM '%s'
 Yes, it is the main purpose of this tool.
 
 #### Can developers integrate `PostgreSQL-to-Redshift-Data-Loader` into their ETL pipelines?
-Yes. Assuming they are doing it on OS Windows.
+Yes. Assuming they use Python.
 
 #### How fast is data load using `PostgreSQL-to-Redshift-Data-Loader`?
 As fast as any implementation of multi-part load using Python and boto.
@@ -234,9 +234,9 @@ You Redshift cluster has to be open to the world (accessible via port 5439 from 
 It uses PostgreSQL COPY command to load file located on S3 into Redshift table.
 
 #### What technology was used to create this tool
-I used SQL*Plus, Python, Boto to write it.
+I used psql.exe, Python, Boto to write it.
 Boto is used to upload file to S3. 
-SQL*Plus is used to spool data to compressor pipe.
+`psql.exe` is used to spool data to compressor pipe.
 psycopg2 is used to establish ODBC connection with Redshift clusted and execute `COPY` command.
 
 #### Why don't you use ODBC driver for Redshift to insert data?
@@ -287,12 +287,13 @@ By default no, but using `include\loader.py` you can extend default functionalit
 
 
 #### Where are the sources?
-Please, contact me for sources.
+Sources are [here](https://github.com/alexbuz/PostgreSQL_To_Redshift_Loader/tree/master/sources).
 
 #### Can you modify functionality and add features?
 Yes, please, ask me for new features.
 
 #### What other AWS tools you've created?
+- [Oracle-To-Redshift-Data-Loader] (https://github.com/alexbuz/Oracle-To-Redshift-Data-Loader) - Stream Oracle data to Amazon-Redshift.
 - [Oracle_To_S3_Data_Uploader] (https://github.com/alexbuz/Oracle_To_S3_Data_Uploader) - Stream Oracle data to Amazon- S3.
 - [CSV_Loader_For_Redshift] (https://github.com/alexbuz/CSV_Loader_For_Redshift/blob/master/README.md) - Append CSV data to Amazon-Redshift from Windows.
 - [S3_Sanity_Check] (https://github.com/alexbuz/S3_Sanity_Check/blob/master/README.md) - let's you `ping` Amazon-S3 bucket to see if it's publicly readable.

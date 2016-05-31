@@ -204,10 +204,10 @@ Yes, it is the main purpose of this tool.
 #### Can developers integrate `PostgreSQL-to-Redshift-Data-Loader` into their ETL pipelines?
 Yes. Assuming they use Python.
 
-#### How fast is data load using `PostgreSQL-to-Redshift-Data-Loader`?
-As fast as any implementation of multi-part load using Python and boto.
+#### I'm trying to test your script. How do I preload data Crime.csv into source PostgreSQL db?
+You can use [CSV loader for PostgreSQL] (https://github.com/data-buddy/Databuddy/releases/tag/0.3.7)
 
-####How to inscease load speed?
+####How to increase load speed?
 Input data stream is getting compressed before upload to S3. So not much could be done here.
 You may want to run it closer to source or target endpoints for better performance.
 

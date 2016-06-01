@@ -18,7 +18,7 @@ def extract(env):
 	db_client_dbshell=r'%s\bin\psql.exe' % PGRES_CLIENT_HOME.strip('"')
 	#print db_client_dbshell
 	#e(0)
-	loadConf=[ db_client_dbshell ,'-U', opt.to_user,'-d',opt.to_db_name, '-h', opt.to_db_server]
+	loadConf=[ db_client_dbshell ,'-U', opt.pgres_user,'-d',opt.pgres_db_name, '-h', opt.pgres_db_server]
 	
 	
 	header_str=''

@@ -226,13 +226,12 @@ def RepresentsInt(s):
 	
 if __name__ == "__main__":		
 	parser = OptionParser()
-	#self.args.to_user,'-d',self.args.to_db_name, '-h', self.args.to_db_server
-	parser.add_option("-q", "--pgres_query_file", dest="pgres_query_file", type=str)
-	parser.add_option("-d", "--pgres_col_delim", dest="pgres_col_delim", type=str, default=',')
-	parser.add_option("-a", "--pgres_quote", dest="pgres_quote", default='"')	
-	parser.add_option("-j", "--to_user", dest="to_user", default='postgres')	
-	parser.add_option("-f", "--to_db_name", dest="to_db_name", default='postgres')	
-	parser.add_option("-n", "--to_db_server", dest="to_db_server", default='127.0.0.1')	
+	parser.add_option("-q", "--pgres_query_file", 	dest="pgres_query_file", type=str)
+	parser.add_option("-d", "--pgres_col_delim",	dest="pgres_col_delim", type=str, default=',')
+	parser.add_option("-a", "--pgres_quote", 	dest="pgres_quote", default='"')	
+	parser.add_option("-j", "--pgres_user", 	dest="pgres_user", default='postgres')	
+	parser.add_option("-f", "--pgres_db_name", 	dest="pgres_db_name", default='postgres')	
+	parser.add_option("-n", "--pgres_db_server", 	dest="pgres_db_server", default='127.0.0.1')	
 
 	#parser.add_option("-e", "--pgres_add_header", dest="ora_add_header",  action="store_true", default=False)
 	parser.add_option("-l", "--pgres_lame_duck", dest="pgres_lame_duck", type=int, default=0)

@@ -7,9 +7,6 @@ Features:
  - Loads PostgreSQL table (or query) data to Amazon-Redshift.
  - No need to create CSV extracts and S3 uploads before load to Redshift.
  - Data stream is compressed while loaded to S3 (and then to Redshift).
- - Works from your OS Windows desktop (command line).
- - It's executable (PostgreSQL_To_Redshift_Loader.exe)  - no need for Python install.
- - It's 64 bit - it will work on any vanilla DOS for 64-bit Windows.
  - AWS Access Keys are not passed as arguments. 
  - You can modify default Python [extractor.py](https://github.com/alexbuz/PostgreSQL_To_Redshift_Loader/blob/master/sources/include/extractor.py) and [loader.py](https://github.com/alexbuz/PostgreSQL_To_Redshift_Loader/blob/master/sources/include/loader.py)
  - Written using Python/boto/psycopg2/PyInstaller.

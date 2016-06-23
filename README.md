@@ -12,11 +12,11 @@ Features:
  - Written using Python/boto/psycopg2/PyInstaller.
 
 
-##Version
-
-OS|Platform|Version 
----|---|---- | -------------
-Windows|64bit|[1.2 beta]
+##Other scripts
+  - [Oracle -> S3](https://github.com/alexbuz/Oracle_To_S3_Data_Uploader/blob/master/README.md) data loader
+  - [Oracle -> Redshift](https://github.com/alexbuz/Oracle-To-Redshift-Data-Loader/blob/master/README.md) data loader
+  - [MySQL -> Redshift](https://github.com/alexbuz/MySQL_To_Redshift_Loader/blob/master/README.md) data loader
+  - [CSV -> Redshift](https://github.com/alexbuz/CSV_Loader_For_Redshift/blob/master/README.md) data loader
 
 ##Purpose
 

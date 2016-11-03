@@ -3,6 +3,8 @@
     Used for ad-hoc query data results load from PostgreSQL to Amazon-Redshift.
     Works from Windows CLI (command line).
 
+NOTE: This script requires Windows PostgreSql client (bin\psql.exe) for data [extract] (https://github.com/alexbuz/PostgreSQL_To_Redshift_Loader/blob/master/sources/include/extractor.py).
+
 Features:
  - Loads PostgreSQL table (or query) data to Amazon-Redshift.
  - Automatically uploads compressed data to before append to Redshift table.

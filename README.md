@@ -13,7 +13,7 @@ Features:
  - Written using Python/boto/psycopg2/PyInstaller.
 
 
-##Other scripts
+## Other scripts
   - [Oracle -> S3](https://github.com/alexbuz/Oracle_To_S3_Data_Uploader/blob/master/README.md) data loader| [TableHunter for Oracle](https://github.com/alexbuz/TableHunter-For-Oracle).
   - [Oracle -> Redshift](https://github.com/alexbuz/Oracle-To-Redshift-Data-Loader/blob/master/README.md) data loader
   - [MySQL -> Redshift](https://github.com/alexbuz/MySQL_To_Redshift_Loader/blob/master/README.md) data loader
@@ -23,7 +23,7 @@ Features:
   - [Oracle->MySQL](https://github.com/alexbuz/Oracle-to-MySQL-DataMigrator/blob/master/README.txt) data loader.
   - [CSV->S3](https://github.com/alexbuz/S3_File_Uploader/blob/master/README.md) data uploader.
 
-##Purpose
+## Purpose
 
 - Stream/pipe/load PostgreSQL table data to Amazon-Redshift.
 
@@ -43,14 +43,14 @@ Features:
 	* psycopg2 docs: http://initd.org/psycopg/docs/
 - Executable is created using [pyInstaller] (http://www.pyinstaller.org/)
 
-##Audience
+## Audience
 
 Database/ETL developers, Data Integrators, Data Engineers, Business Analysts, AWS Developers, SysOps
 
 ##Designated Environment
 Pre-Prod (UAT/QA/DEV)
 
-##Usage
+## Usage
 
 ```
 c:\Python35-32\PROJECTS\PostgreSQL2redshift>dist\PostgreSQL_to_Redshift_loader.exe
@@ -100,10 +100,10 @@ Usage:
 	psycopg2 docs: http://initd.org/psycopg/docs/
 
 ```
-#Example
+# Example
 
 
-###Environment variables
+### Environment variables
 Set the following environment variables (for all tests):
 
 ```
@@ -186,7 +186,7 @@ COPY %s FROM '%s'
 ```
 
 
-###Download
+### Download
 * `git clone https://github.com/alexbuz/PostgreSQL-to-Redshift-Data-Loader`
 * [Master Release](https://github.com/alexbuz/PostgreSQL-to-Redshift-Data-Loader/archive/master.zip) -- `PostgreSQL_to_redshift_loader 1.2`
 

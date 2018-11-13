@@ -7,7 +7,7 @@
 
 Features:
  - Loads PostgreSQL table (or query) data to Amazon-Redshift.
- - Automatically uploads compressed data to before append to Redshift table.
+ - Automatically uploads compressed data to S3 before append to Redshift table.
  - AWS Access Keys are not passed as arguments. 
  - You can modify default Python [extractor.py](https://github.com/alexbuz/PostgreSQL_To_Redshift_Loader/blob/master/sources/include/extractor.py) and [loader.py](https://github.com/alexbuz/PostgreSQL_To_Redshift_Loader/blob/master/sources/include/loader.py)
  - Written using Python/boto/psycopg2/PyInstaller.

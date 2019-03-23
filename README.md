@@ -292,23 +292,9 @@ Sources are [here](https://github.com/alexbuz/PostgreSQL_To_Redshift_Loader/tree
 #### Can you modify functionality and add features?
 Yes, please, ask me for new features.
 
-#### What other AWS tools you've created?
-- [Oracle-To-Redshift-Data-Loader] (https://github.com/alexbuz/Oracle-To-Redshift-Data-Loader) - Stream Oracle data to Amazon-Redshift.
-- [Oracle_To_S3_Data_Uploader] (https://github.com/alexbuz/Oracle_To_S3_Data_Uploader) - Stream Oracle data to Amazon- S3.
-- [CSV_Loader_For_Redshift] (https://github.com/alexbuz/CSV_Loader_For_Redshift/blob/master/README.md) - Append CSV data to Amazon-Redshift from Windows.
-- [S3_Sanity_Check] (https://github.com/alexbuz/S3_Sanity_Check/blob/master/README.md) - let's you `ping` Amazon-S3 bucket to see if it's publicly readable.
-- [EC2_Metrics_Plotter](https://github.com/alexbuz/EC2_Metrics_Plotter/blob/master/README.md) - plots any CloudWatch EC2 instance  metric stats.
-- [S3_File_Uploader](https://github.com/alexbuz/S3_File_Uploader/blob/master/README.md) - uploads file from Windows to S3.
 
-#### Do you have any AWS Certifications?
-Yes, [AWS Certified Developer (Associate)](https://raw.githubusercontent.com/alexbuz/FAQs/master/images/AWS_Ceritied_Developer_Associate.png)
-
-#### Can you create similar/custom data tool for our business?
-Yes, you can PM me here or email at `alex_buz@yahoo.com`.
-I'll get back to you within hours.
-
-###Links
- - [Employment FAQ](https://github.com/alexbuz/FAQs/blob/master/README.md)
+## Teardown
+https://github.com/pydemo/teardown
 
 
 

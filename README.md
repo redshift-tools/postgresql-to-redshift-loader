@@ -12,7 +12,6 @@ Features:
  - You can modify default Python [extractor.py](https://github.com/alexbuz/PostgreSQL_To_Redshift_Loader/blob/master/sources/include/extractor.py) and [loader.py](https://github.com/alexbuz/PostgreSQL_To_Redshift_Loader/blob/master/sources/include/loader.py)
  - Written using Python/boto/psycopg2/PyInstaller.
 
-[<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png">](https://www.buymeacoffee.com/0nJ32Xg)
 
 ## Other scripts
   - [Oracle -> S3](https://github.com/alexbuz/Oracle_To_S3_Data_Uploader/blob/master/README.md) data loader| [TableHunter for Oracle](https://github.com/alexbuz/TableHunter-For-Oracle) | [DataWorm](https://github.com/alexbuz/DataWorm/blob/master/README.md) 

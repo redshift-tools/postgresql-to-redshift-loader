@@ -186,122 +186,16 @@ COPY %s FROM '%s'
 ```
 
 
-### Download
-* `git clone https://github.com/alexbuz/PostgreSQL-to-Redshift-Data-Loader`
-* [Master Release](https://github.com/alexbuz/PostgreSQL-to-Redshift-Data-Loader/archive/master.zip) -- `PostgreSQL_to_redshift_loader 1.2`
-
-
-
-
-#
-#
-#
-#
-#   
-#FAQ
-#  
-#### Can it load PostgreSQL data to Amazon Redshift Database?
-Yes, it is the main purpose of this tool.
-
-#### Can developers integrate `PostgreSQL-to-Redshift-Data-Loader` into their ETL pipelines?
-Yes. Assuming they use Python.
-
-#### I'm trying to test your script. How do I preload data Crime.csv into source PostgreSQL db?
-You can use [CSV loader for PostgreSQL] (https://github.com/data-buddy/Databuddy/releases/tag/0.3.7)
-
-####How to increase load speed?
-Input data stream is getting compressed before upload to S3. So not much could be done here.
-You may want to run it closer to source or target endpoints for better performance.
-
-#### What are the other ways to move large amounts of data from PostgreSQL to Redshift?
-You can write a sqoop script that can be scheduled with Data Pipeline.
-
-#### Does it create temporary data file?
-No
-
-#### Can I log transfered data for analysis?
-Yes, Use `-s, --create_data_dump` to dump streamed data.
-
-#### Explain first step of data transfer?
-The query file you provided is used to select data form target PostgreSQL server.
-Stream is compressed before load to S3.
-
-#### Explain second step of data transfer?
-Compressed data is getting uploaded to S3 using multipart upload protocol.
-
-#### Explain third step of data load. How data is loaded to Amazon Redshift?
-You Redshift cluster has to be open to the world (accessible via port 5439 from internet).
-It uses PostgreSQL COPY command to load file located on S3 into Redshift table.
-
-#### What technology was used to create this tool
-I used psql.exe, Python, Boto to write it.
-Boto is used to upload file to S3. 
-`psql.exe` is used to spool data to compressor pipe.
-psycopg2 is used to establish ODBC connection with Redshift clusted and execute `COPY` command.
-
-#### Why don't you use ODBC driver for Redshift to insert data?
-From my experience it's much slower that COPY command.
-It's 10x faster to upload CSV file to Amazon-S3 first and then run COPY command.
-You can still use ODBC for last step.
-If you are a Java shop, take a look at Progress [JDBC Driver](https://www.progress.com/blogs/booyah-amazon-redshift-challenge-loaded-in-8-min-oow14).
-They claim it can load 1 mil records in 6 min.
-
-
-#### What would be my PostgreSQL-to-Redshift migration strategy?
- - Size the database
- - Network
- - Version of PostgreSQL
- - PostgreSQL clinet (psql.exe) availability
- - Are you doing it in one step or multiple iterations?
- 
-
-#### Do you use psql to execute COPY command against Redshift?
-No. I use `psycopg2` python module (ODBC).
-
-#### Why are you uploading extracted data to S3? whould it be easier to just execute COPY command for local spool file?
-As of now you cannot load from local file. You can use COPY command with Amazon Redshift, but only with files located on S3.
-If you are loading CSV file from Windows command line - take a look at [CSV_Loader_For_Redshift](https://github.com/alexbuz/CSV_Loader_For_Redshift)
-
-#### Can I modify default psql COPY command?
-Yes. Edit include/loader.py and add/remove COPY command options
-
-Other options you may use:
-
-    COMPUPDATE OFF
-    EMPTYASNULL
-    ACCEPTANYDATE
-    ACCEPTINVCHARS AS '^'
-    GZIP
-    TRUNCATECOLUMNS
-    FILLRECORD
-    DELIMITER '$DELIM'
-    REMOVEQUOTES
-    STATUPDATE ON
-    MAXERROR AS $MaxERROR
-
-#### Does it delete file from S3 after upload?
-No
-
-#### Does it create target Redshift table?
-By default no, but using `include\loader.py` you can extend default functionality and code in target table creation.
-
-
-#### Where are the sources?
-Sources are [here](https://github.com/alexbuz/PostgreSQL_To_Redshift_Loader/tree/master/sources).
-
-#### Can you modify functionality and add features?
-Yes, please, ask me for new features.
-
 ## Teardown
 https://github.com/pydemo/teardown
-
-
-[<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png">](https://www.buymeacoffee.com/0nJ32Xg)
 
 
 ## Snowpipe
 
 https://github.com/pydemo/Snowpipe-For-SQLServer
+
+
+[<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png">](https://www.buymeacoffee.com/0nJ32Xg)
 
 
 
